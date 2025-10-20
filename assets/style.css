@@ -1,0 +1,43 @@
+
+:root{
+  --bg:#ffffff; --card:#fff; --text:#0f172a; --muted:#475569; --accent:#06b6d4;
+  --dark-bg:#081126; --dark-card:#0b1220; --dark-text:#e6eef4; --dark-muted:#9aa8b8;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}
+.container{max-width:980px;margin:24px auto;padding:16px}
+.site-header{display:flex;align-items:center;gap:12px}
+.site-header.small-header h1{font-size:20px;margin:0}
+.logo{width:56px;height:56px;border-radius:10px}
+h1{margin:0;font-size:22px}
+.tag{color:var(--muted);margin:4px 0 12px}
+.card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.06)}
+.small{font-size:13px;color:var(--muted)}
+textarea{width:100%;min-height:88px;padding:10px;border-radius:8px;border:1px solid #e6eef4;font-size:16px;resize:vertical}
+.controls{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.btn{background:var(--accent);color:#fff;border:0;padding:10px 12px;border-radius:10px;cursor:pointer}
+.btn.outline{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.select{padding:8px;border-radius:8px;border:1px solid #e6eef4}
+.variants{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:12px}
+.variant{background:#f8fafc;padding:10px;border-radius:8px;display:flex;flex-direction:column;gap:8px}
+.variant .out{font-weight:600;word-break:break-word}
+.variant button{align-self:flex-end;padding:6px 8px;border-radius:8px;border:0;background:#0ea5a4;color:white;cursor:pointer}
+.links{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.footer{margin-top:14px;color:var(--muted);font-size:13px}
+
+/* copied toast */
+.copied{position:fixed;right:16px;bottom:16px;background:#0b1220;color:#fff;padding:8px 12px;border-radius:8px;opacity:0;transform:translateY(10px);transition:all .22s}
+.copied.show{opacity:1;transform:none}
+
+/* dark mode */
+@media (prefers-color-scheme:dark){
+  :root{background:var(--dark-bg);--card:var(--dark-card);--text:var(--dark-text);--muted:var(--dark-muted)}
+  body{background:var(--dark-bg);color:var(--dark-text)}
+  .variant{background:#071123}
+}
+
+/* responsive */
+@media (max-width:600px){
+  .variants{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+  .logo{width:48px;height:48px}
+}
